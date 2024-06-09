@@ -32,72 +32,55 @@
             
                 </div></div></div>     <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
   
   <div class="card-body">
     <h5 class="card-title">view quiz master</h5>
-    <a href="login.jsp" class="btn btn-primary">Check out</a>
+    <form method="post" action="viewq">
+<button type="submit" class="btn btn-primary">Check out</button>
+    </form>
   </div>
 </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
   
   <div class="card-body">
-    <h5 class="card-title">View user details</h5>
-    
-    <a href="#" class="btn btn-primary">Check out</a>
+    <h5 class="card-title">View/edit user details</h5>
+    <form method="post" action="viewu">
+<button type="submit" class="btn btn-primary">Check out</button>
+    </form>
   </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
   
   <div class="card-body">
-    <h5 class="card-title">view/Edit quiz settings</h5>
-    <a href="login.jsp" class="btn btn-primary">Check out</a>
+    <h5 class="card-title">create new user</h5>
+    <a href="register.jsp" class="btn btn-primary">Lets go</a>
   </div>
-</div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-  
-  <div class="card-body">
-    <h5 class="card-title">Edit the quizes</h5>
-    <form>
-  <div class="form-group">
-    <label for="Qid">Quiz id</label>
-    <input type="text" class="form-control" id="Qid" placeholder="Enter quiz id">
+                    </div></div>
+                <div class="col-md-3">
+                                    <div class="card">
+
+                    <div class="card-body">
+    <h5 class="card-title">View results of participant</h5>
+    <form method="post" action="viewscall">
+<button type="submit" class="btn btn-primary">Check out</button>
+    </form>
   </div>
-  
-</form>
-    <a href="#" class="btn btn-primary">Lets get started</a>
-  </div>
-</div>
+                </div><!-- comment -->
+            
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="card">
-  
-  <div class="card-body">
-    <h5 class="card-title">Edit user details</h5>
-    <form>
-  <div class="form-group">
-    <label for="uid">user id</label>
-    <input type="text" class="form-control" id="uid" placeholder="Enter user id">
-  </div>
-  
-</form>
-    <a href="#" class="btn btn-primary">Lets get started</a>
   </div>
                     </div>
-                </div>
+                
                 
                     
-                </div>
-            </div>
-        </div>
+               
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 		
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

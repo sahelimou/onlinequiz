@@ -102,7 +102,7 @@ function UpdateTimer() {
     <input type="number" class="form-control" id="tq" name="tq" value="<%=qnsall.size()  %>"  readonly="yes" hidden >
     <input type="number" class="form-control" id="uid" name="uid" value="<%=uid1  %>"  readonly="yes" hidden >
       <label for="qns">Question</label>
-    <input type="text" class="form-control" id="qns1" name="qns1" value="<%=qb.getQns() %>"  >
+    <input type="text" class="form-control" id="qns1" name="qns1" value="<%=qb.getQns() %>" readonly="yes" >
            
     <input type="number" class="form-control" id="ansid1" name="ansid1" value="<%=qb.getAnsid() %>"  readonly="yes" hidden>
      
@@ -110,12 +110,12 @@ function UpdateTimer() {
   <input class="form-check-input" type="radio" name="ans1" id="corrans1" value="1" >
  
         <label class="form-check-label" for="corrans">Answer1
-    <input type="text" class="form-control" id="corrans1" name="corrans1" value="<%=qb.getCorrans() %>" >
+    <input type="text" class="form-control" id="corrans1" name="corrans1" value="<%=qb.getCorrans() %>" readonly="yes">
         </label></div>
        <div class="form-check">
   <input class="form-check-input" type="radio" name="ans1" id="answ1" value="0" >
         <label class="form-check-label" for="answ">Answer2
-    <input type="text" class="form-control" id="answ1" name="answ1" value="<%=qb.getAnsw() %>" >
+    <input type="text" class="form-control" id="answ1" name="answ1" value="<%=qb.getAnsw() %>" readonly="yes">
         </label></div>
     
                                           <%i++;}%>

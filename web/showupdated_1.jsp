@@ -25,7 +25,7 @@
     <body>
         <%@include file="navb_2.jsp" %>
         <% String uid = (String)session.getAttribute("user"); 
-        int uid1=(int)session.getAttribute("uid");
+        //int uid1=(int)session.getAttribute("uid");
         quizB qb=(quizB)request.getAttribute("qb");
         //session.setAttribute("qqb", qb);
         session.setAttribute("qid",qb.getQid());
@@ -38,6 +38,8 @@
                int qtm=(int) session.getAttribute("qtm");
        int qm=(int) session.getAttribute("qm");
        int tq=(int) session.getAttribute("tq");
+       
+       //int status=(int)request.getAttribute("status");
 
         /*session.setAttribute("qnsid", qb.getQnsid());
         session.setAttribute("ansid", qb.getAnsid());
@@ -65,13 +67,23 @@
      <input type="number" class="form-control" id="qid" name="qid" value="<%=qid %>"  readonly="yes" >
      <label for="qid">Quiz Topic</label>
     <input type="text" class="form-control" id="quiz" name="quiz" value="<%=qtopic %>"   >
-    <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">View Quiz settings</a>
-  </p>
-  <div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-        <form action="editq" method="post">    
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ View/Edit quiz settings
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form action="editq" method="post" id="showup">    
             <input type="hidden" class="form-control" id="qid" name="qid" value="<%=qid %>"  >
             <div class="card card-body">
             <label for="qid">Quiz Topic</label>
@@ -98,17 +110,26 @@
         <label for="dt">Created on</label>
     <input class="form-control" id="dt" name="dt" value="<%=qb.getDt() %>" readonly="yes"  >
       </div>
-    <button type="submit" class="btn btn-primary">Save </button>
+    <button type="button" class="btn btn-primary" onclick="form_submit()" >Save changes</button>
         </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
     </div>
   </div>
-  </div>
+</div>
+   <!--
        <form action="addqns" method="post">  
        <input type="hidden" class="form-control" id="Qid" name="Qid" value="<%=qb.getQid() %>"  >
           <p>
-   <button type="submit" class="btn btn-primary">Add the new question with answer</button>
+              
+              <button type="submit" class="btn btn-primary" id="addnewq" >Add the new question with answer</button>
+               
   </p>
-      </form>
+      </form>-->
       <form action="showqns" method="post">  
        <input type="hidden" class="form-control" id="qid" name="qid" value="<%=qb.getQid() %>"  >
           <p>
@@ -121,7 +142,15 @@
             </div>
         </main>
            
-  
+          <script>
+             function form_submit() {
+                 if(document.getElementById("new_q")>0)
+                 {
+                     document.getElementById("addnewq").disabled="false";
+                 }
+    document.getElementById("showup").submit();
+   } 
+</script>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 		
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

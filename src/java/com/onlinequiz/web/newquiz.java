@@ -73,7 +73,7 @@ public class newquiz extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        quizB qb1=new quizB();
+       quizB qb1=new quizB();
         /*PrintWriter out = response.getWriter();
         out.println(request.getParameter("qt"));
         out.println(request.getParameter("mq"));
@@ -97,12 +97,7 @@ public class newquiz extends HttpServlet {
          RequestDispatcher rd = request.getRequestDispatcher("udashboard_1.jsp");
   rd.forward(request, response);
   
-   }
-        else
-        {
-            response.sendRedirect("error.jsp");
-        }
-    }
+    }}
 
     /**
      * Returns a short description of the servlet.

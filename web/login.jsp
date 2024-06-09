@@ -20,7 +20,7 @@
     </head>
     <body>
         <%@include file="navb.jsp" %>
-        <main class="d-flex align-items-center" style="height: 70vh">
+       <main class="d-flex align-items-center" style="height: 70vh">
         <div class="container">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
@@ -46,15 +46,15 @@
  
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
-                                
+                                  
                                 New user <a href="register.jsp"><span class="fa fa-user-plus"></span></a>
                                
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                </<main>
+        </div>
+                </main>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 		
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

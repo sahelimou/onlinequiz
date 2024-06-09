@@ -64,6 +64,30 @@
         <servlet-name>viewsc</servlet-name>
         <servlet-class>com.onlinequiz.web.viewsc</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>viewu</servlet-name>
+        <servlet-class>com.onlinequiz.web.viewu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>editu</servlet-name>
+        <servlet-class>com.onlinequiz.web.editu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>edituser</servlet-name>
+        <servlet-class>com.onlinequiz.web.edituser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delu</servlet-name>
+        <servlet-class>com.onlinequiz.web.delu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delq</servlet-name>
+        <servlet-class>com.onlinequiz.web.delq</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewscall</servlet-name>
+        <servlet-class>com.onlinequiz.web.viewscall</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>alogin</servlet-name>
         <url-pattern>/alogin</url-pattern>
@@ -127,6 +151,30 @@
     <servlet-mapping>
         <servlet-name>viewsc</servlet-name>
         <url-pattern>/viewsc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewu</servlet-name>
+        <url-pattern>/viewu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editu</servlet-name>
+        <url-pattern>/editu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>edituser</servlet-name>
+        <url-pattern>/edituser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delu</servlet-name>
+        <url-pattern>/delu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delq</servlet-name>
+        <url-pattern>/delq</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewscall</servlet-name>
+        <url-pattern>/viewscall</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

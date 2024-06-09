@@ -81,7 +81,7 @@ public class showquiz extends HttpServlet {
         //qqnsB qb=onDao.showQ(qid);
         quizB qb=onDao.showQ(qid);
         request.setAttribute("qb", qb);
-            RequestDispatcher rd = request.getRequestDispatcher("showupdated.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("showupdated_1.jsp");
   rd.forward(request, response);
         
     }

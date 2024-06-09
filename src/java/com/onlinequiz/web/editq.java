@@ -113,14 +113,16 @@ public class editq extends HttpServlet {
   {
    
        //response.setContentType("text/html"); 
-/*PrintWriter out = response.getWriter(); 
+//PrintWriter out = response.getWriter(); 
 out.println("<script type=\"text/javascript\">");
-   out.println("alert('data saved successfully');");
-   out.println("location='udashboard.jsp';");
-   out.println("</script>");*/
- 
-      response.sendRedirect("udashboard.jsp");}
-  /* }
+   out.println("alert('qns added successfully!!! now add the qns with ans!!!');");
+//   out.println("location='udashboard.jsp';");
+   out.println("</script>");
+ //request.setAttribute("status", status);
+     response.sendRedirect("udashboard.jsp");}
+    /*RequestDispatcher rd = request.getRequestDispatcher("showupdated_1.jsp");
+  rd.forward(request, response);}
+   }
    else
    {
       response.setContentType("text/html"); 

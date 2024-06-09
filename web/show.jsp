@@ -25,7 +25,7 @@
     <body>
         <%@include file="navb_2.jsp" %>
         <% String uid = (String)session.getAttribute("user"); 
-        int uid1=(int)session.getAttribute("uid");
+        //int uid1=(int)session.getAttribute("uid");
         ArrayList qnsall=(ArrayList)request.getAttribute("qnsall");
         /*qnsB qb=(qnsB)request.getAttribute("qb");
         //session.setAttribute("qqb", qb);

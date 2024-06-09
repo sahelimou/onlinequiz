@@ -85,6 +85,7 @@ public class alogin extends HttpServlet {
             if(onDao.validate(a1))
             {
                 session.setAttribute("user",a1.getUid());
+                //session.setAttribute("uid",a1.getUid());
                 response.sendRedirect("admin.jsp");
             }
             else

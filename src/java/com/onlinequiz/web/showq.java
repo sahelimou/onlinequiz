@@ -75,8 +75,7 @@ public class showq extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        //PrintWriter out = response.getWriter();
-        int uid=Integer.parseInt(request.getParameter("uid"));
+         int uid=Integer.parseInt(request.getParameter("uid"));
         //out.println(uid);
         ArrayList<quizB> quizall=new ArrayList<>();
 quizall=onDao.showq(uid);

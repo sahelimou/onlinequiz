@@ -18,6 +18,7 @@
             .banner-background{
                  clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 70%, 73% 73%, 30% 61%, 0% 70%, 0 0);      }
         </style>
+       
 
 </head>
     <body>
@@ -68,7 +69,7 @@
     <h5 class="card-title">Add qns to existing quiz</h5>
     <form method="post" action="addqns">
   <div class="form-group">
-       <input type="number" class="form-control" id="uid" name="uid" type="hidden">
+       <input type="hidden" class="form-control" id="uid" name="uid" value="<%=uid %>">
     <label for="Qid">Enter Quiz id</label>
     <input type="number" class="form-control" id="Qid" name="Qid" placeholder="Enter quiz id">
   </div>

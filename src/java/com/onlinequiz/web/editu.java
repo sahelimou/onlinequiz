@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author User
  */
-public class register extends HttpServlet {
+public class editu extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet register</title>");            
+            out.println("<title>Servlet editu</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet editu at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,38 +72,14 @@ public class register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   //     processRequest(request, response);
-   regB r=new regB();
-   int i=0;
-    /*PrintWriter out = response.getWriter();
-   out.println(request.getParameter("uname"));
-   out.println(request.getParameter("pwd"));
-   out.println(request.getParameter("em"));
-   out.println(request.getParameter("hq"));
-   out.println(request.getParameter("role"));*/
-  r.setUname(request.getParameter("uname"));
-   r.setPwd(request.getParameter("pwd"));
-   r.setEm(request.getParameter("em"));
-   r.setHq(request.getParameter("hq"));
-   r.setRole(Integer.parseInt(request.getParameter("role")));
-   try{
-   i=onDao.reg(r);
-   //out.println(i);
-  if(i>0)
-   {
-       request.setAttribute("uid", i);
-         RequestDispatcher rd = request.getRequestDispatcher("login_1.jsp");
+     //   processRequest(request, response);
+     regB user=new regB();
+     int id1=Integer.parseInt(request.getParameter("uid"));
+    user=onDao.user1(id1);
+     request.setAttribute("user", user);
+            RequestDispatcher rd = request.getRequestDispatcher("editu.jsp");
   rd.forward(request, response);
-   }
-   else
-       response.sendRedirect("error.jsp");
-   
     }
-   catch(Exception e)
-   {
-     e.printStackTrace();
-   }
-   }
 
     /**
      * Returns a short description of the servlet.

@@ -57,7 +57,7 @@
                                        <div class="card-body">
                                            <form action="addq" method="post">
      <div class="form-group">
-         <input type="number" class="form-control" id="uid" name="uid" value="<%=uid %>"  type="hidden" >
+         <input  class="form-control" id="uid" name="uid" value="<%=uid %>"  type="hidden" >
          
     <label for="qid">Quiz id</label>
     <input type="number" class="form-control" id="qid" name="qid" value="<%=qid %>"  readonly="yes" >

@@ -20,6 +20,15 @@ public class qnsB {
    private int tm;
    private int tot_m;
 private int uid;
+private String uname;
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public String getUname() {
+        return uname;
+    }
 
     public void setUid(int uid) {
         this.uid = uid;

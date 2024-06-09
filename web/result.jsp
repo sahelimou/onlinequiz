@@ -20,7 +20,15 @@
             .banner-background{
                  clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 70%, 73% 73%, 30% 61%, 0% 70%, 0 0);      }
         </style>
-      
+       <script src=
+ "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+    <script src=
+ "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
     </head>
     <body>
         <%@include file="navb.jsp" %>
@@ -41,6 +49,11 @@
                              Result
                             </div>
                                        <div class="card-body" >
+                                           <input  type="button" value="download result"               
+                onclick="convertHTMLtoPDF()">
+                                           <div id="divID">
+                                               <h1>User name:-<%=uid%></h1>
+                                               
                                            <h1>Marks obtained:-<%=qb.getQmark()%></h1>
                                            <h1>Total marks:- <%=qb.getTot_m()%></h1>
                                            <% int i=qb.getQmark();int j=qb.getTot_m();
@@ -50,12 +63,29 @@
                                                    else {%>
                                                    <h1>you have failed!!!</h1>
                                                    <% } %>
+                                           </div>
+                                           
             </div>
                        </div>
             </div>
                    </main>
            
-  
+  <script type="text/javascript">
+        function convertHTMLtoPDF() {
+            const { jsPDF } = window.jspdf;
+ 
+            let doc = new jsPDF('l', 'mm', [1500, 1400]);
+            let pdfjs = document.querySelector('#divID');
+ 
+            doc.html(pdfjs, {
+                callback: function(doc) {
+                    doc.save("result.pdf");
+                },
+                x: 12,
+                y: 12
+            });                
+        }            
+    </script>     
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 		
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

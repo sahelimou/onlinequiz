@@ -109,13 +109,15 @@ public class onDao {
                     r.setUid(rs.getInt("uid"));
                 }
                 stmt1.close();
+                //status =1;
                 return r.getUid();
             }
             catch(Exception e)
             {
                 e.printStackTrace();
             }
-            return status;
+           return status;
+           //return r.getUid();
     }
     public static int newq(quizB qb)
     {
@@ -433,6 +435,7 @@ public static ArrayList<quizB> showq(int uid)
             }
             return quizall;
     }
+
 public static ArrayList<quizB> showall()
     {
       //int status = 0;
@@ -460,6 +463,7 @@ public static ArrayList<quizB> showall()
                        qb.setTq(rs.getInt("tot_q"));
                        qb.setQm(rs.getInt("q_mark"));
                        qb.setQtm(rs.getInt("tot_tm"));
+                       qb.setCrtby(rs.getInt("uid"));
                         
             
    quizall.add(qb);
@@ -473,6 +477,47 @@ public static ArrayList<quizB> showall()
             }
             return quizall;
     }
+public static ArrayList<regB> showu()
+    {
+      //int status = 0;
+       
+        ArrayList<regB> userall=new ArrayList<>();
+        //qqnsB qb=new qqnsB();
+      try{
+            String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+        //Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+             ResultSet rs=null;
+             //int qaid;
+             PreparedStatement stmt=conn.prepareStatement("select * from user");
+                //stmt.setInt(1,uid);
+                rs=stmt.executeQuery();
+                while(rs.next())
+                {
+                     regB rb=new regB();
+                
+                    rb.setUid(rs.getInt("uid"));
+                    rb.setUname(rs.getString("uname"));
+                    rb.setEm(rs.getString("Email"));
+                    rb.setHq(rs.getString("hq"));
+                    rb.setRole(rs.getInt("role"));
+                        
+            
+   userall.add(rb);
+                   // stmt3.close();
+                }  
+                
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+            return userall;
+    }
+
+
 public static qnsB calC(qnsB qb)
     {
         
@@ -531,7 +576,7 @@ public static qnsB calC(qnsB qb)
        stmt2.setInt(6,q.getQid());
        //ps.setInt(1, qid);
        //ps.setString(2,rb.getPwd());
-       
+                     
                     status=stmt2.executeUpdate();
                     stmt2.close();
       
@@ -539,6 +584,7 @@ public static qnsB calC(qnsB qb)
    }catch(Exception e){}
        return status;//return status;
     }
+    
     public static void editqns(qnsB q)
     {
         int status=0;
@@ -614,5 +660,163 @@ public static qnsB calC(qnsB qb)
             }
             return score;
     }
+    public static int edituser(regB rb)
+    {
+        int status=0;
+       try{
+           Class.forName("com.mysql.jdbc.Driver");
+       String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+       
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+        //Statement stmt = null;
+        ResultSet rs = null;
+      PreparedStatement stmt2=conn.prepareStatement("update user set uname=?,hq=?,Email=?,role=? where uid=?");
+                
+       stmt2.setString(1,rb.getUname());
+       stmt2.setString(2,rb.getHq());
+       stmt2.setString(3,rb.getEm());
+       stmt2.setInt(4,rb.getRole());
+       stmt2.setInt(5,rb.getUid());
+       //ps.setInt(1, qid);
+       //ps.setString(2,rb.getPwd());
+                     
+                    status=stmt2.executeUpdate();
+                    stmt2.close();
+      
+       
+   }catch(Exception e){}
+       return status;//return status;
+    }
+    public static void delu(int id)
+    {
+        //boolean status=false;
+       try{
+           Class.forName("com.mysql.jdbc.Driver");
+       String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+       
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+        //Statement stmt = null;
+        ResultSet rs = null;
+      PreparedStatement stmt2=conn.prepareStatement("delete from user where uid=?");
+                
+       stmt2.setInt(1,id);
+       
+       //ps.setInt(1, qid);
+       //ps.setString(2,rb.getPwd());
+                     
+                    stmt2.execute();
+                    stmt2.close();
+      
+       
+   }catch(Exception e){}
+       //return status;//return status;
+    }
+    public static void delq(int qid)
+    {
+        //boolean status=false;
+       try{
+           Class.forName("com.mysql.jdbc.Driver");
+       String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+       
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+        //Statement stmt = null;
+        ResultSet rs = null;
+      PreparedStatement stmt2=conn.prepareStatement("delete from quiz where qid=?");
+                
+       stmt2.setInt(1,qid);
+       
+       //ps.setInt(1, qid);
+       //ps.setString(2,rb.getPwd());
+                     
+                    stmt2.execute();
+                    stmt2.close();
+      
+       
+   }catch(Exception e){}
+       //return status;//return status;
+    }
+public static regB user1(int id1)
+    {
+      //int status = 0;
+       
+        regB user=new regB();
+        //qqnsB qb=new qqnsB();
+      try{
+            String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+        //Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+             ResultSet rs=null;
+             //int qaid;
+             PreparedStatement stmt=conn.prepareStatement("select * from user where uid=?");
+                stmt.setInt(1,id1);
+                rs=stmt.executeQuery();
+                if(rs.next())
+                {
+                 user.setUname(rs.getString("uname"));
+                 user.setHq(rs.getString("hq"));
+                 user.setEm(rs.getString("email"));
+                 user.setRole(rs.getInt("role"));
+               
+                }
+                user.setUid(id1);
+                
+                
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+            return user;
+    }
+public static ArrayList<qnsB> showscoreall()
+    {
+      //int status = 0;
+       
+        ArrayList<qnsB> score=new ArrayList<>();
+        //qqnsB qb=new qqnsB();
+      try{
+            String dbURL = "jdbc:mysql://localhost:3306/onlinequiz";
+        String username ="root";
+        String password = "";
+        //Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(dbURL, username, password);
+             ResultSet rs=null;
+             //int qaid;
+             PreparedStatement stmt=conn.prepareStatement("select m.uid,u.uname,m.qid,m.tot_mark,m.mark_obt from marks as m join user as u on m.uid=u.uid ");
+                //stmt.setInt(1,uid);
+                rs=stmt.executeQuery();
+                while(rs.next())
+                {
+                     qnsB qb=new qnsB();
+                
+                    
+                       qb.setQid(rs.getInt("qid"));
+                       qb.setUid(rs.getInt("uid"));
+                       qb.setUname(rs.getString("uname"));
+                     qb.setTot_m(rs.getInt("tot_mark"));
+                       qb.setQmark(rs.getInt("mark_obt"));
+                       
+                        
+            
+   score.add(qb);
+                   // stmt3.close();
+                }  
+                
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+            return score;
+    }
 
 }
+

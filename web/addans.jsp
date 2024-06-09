@@ -42,7 +42,7 @@
   <div class="card-body">
     <h5 class="card-title">view/Edit quiz</h5>
     <form method="post" action="showq">
-        <input type="number" class="form-control" id="uid" name="uid" value="<%=uid %>" hidden="yes">
+        <input type="number" class="form-control" id="uid" name="uid" value="<%=uid1 %>" hidden="yes">
         <button type="submit" class="btn btn-primary">Lets get started</button>
     </form>
         <!--

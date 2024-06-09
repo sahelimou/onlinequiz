@@ -29,23 +29,20 @@
                                 Login here
                             </div>
                             <div class="card-body">
-                                <form>
-  <div class="form-group">
-    <label for="uid">User ID</label>
-    <input type="text" class="form-control" name="uid" id="uid" aria-describedby="emailHelp" placeholder="Enter User ID" required="yes">
+                              <form action="ulogin" method="post">
    
-  </div>
-       </div><div class="form-group">
+  </div><div class="form-group">
     <label for="uname">user name</label>
     <input type="text" class="form-control" name="uname" id="uname" placeholder="user name" required="yes">
-  </div>                             
+  </div>
+                                    
   <div class="form-group">
     <label for="pwd">Password</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Password" required="yes">
+    <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password" required="yes">
   </div>
  
   <button type="submit" class="btn btn-primary">Login</button>
-</form>
+</form></div>
                                 <% int id = 
             (int)request.getAttribute("uid");
                  %>        

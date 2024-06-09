@@ -77,7 +77,7 @@ public class viewq extends HttpServlet {
         ArrayList<quizB> quizall=new ArrayList<>();
 quizall=onDao.showall();
 request.setAttribute("quizall", quizall);
-            RequestDispatcher rd = request.getRequestDispatcher("showqall.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("showqall_1.jsp");
   rd.forward(request, response);
     }
 
